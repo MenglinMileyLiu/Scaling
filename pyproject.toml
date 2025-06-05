@@ -1,0 +1,53 @@
+[project]
+name = "scaling"
+version = "0.1"
+description = "A data science project for scaling with LLM in political science"
+authors = [
+  { name="Your Name", email="your.email@example.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+
+dependencies = [
+  "ipython",
+  "ipykernel",
+  "numpy",
+  "pandas",
+  "langchain",
+  "scikit-learn",
+  "matplotlib",
+  "seaborn"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/scaling/__init__.py"  # optional: version is stored here
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+  "black",
+  "flake8",
+  "mypy",
+  "isort"
+]
+[tool.hatch.envs.default.scripts]
+lint = "flake8 src tests"
+format = "black src tests"
+typecheck = "mypy src"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+[tool.isort]
+profile = "black"
+
