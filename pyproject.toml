@@ -7,22 +7,14 @@ authors = [
 ]
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.8"
-
-dependencies = [
-  "ipython",
-  "ipykernel",
-  "numpy",
-  "pandas",
-  "langchain",
-  "scikit-learn",
-  "matplotlib",
-  "seaborn"
-]
+requires-python = ">=3.10"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
 
 [tool.hatch.version]
 path = "src/scaling/__init__.py"  # optional: version is stored here
@@ -31,23 +23,18 @@ path = "src/scaling/__init__.py"  # optional: version is stored here
 dependencies = [
   "pytest",
   "black",
-  "flake8",
   "mypy",
-  "isort"
+  "ruff",
+  "coverage",
 ]
+
 [tool.hatch.envs.default.scripts]
-lint = "flake8 src tests"
+lint = "ruff src tests"
 format = "black src tests"
 typecheck = "mypy src"
+test = "pytest"
+coverage-report = "coverage run -m pytest && coverage report"
 
 [tool.black]
 line-length = 88
-target-version = ["py38"]
-
-[tool.flake8]
-max-line-length = 88
-extend-ignore = ["E203", "W503"]
-
-[tool.isort]
-profile = "black"
-
+target-version = ["py312", "py311", "py310"]
