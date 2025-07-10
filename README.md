@@ -63,6 +63,8 @@ To set up the project for development and enable collaborative contributions, fo
     deactivate
 ```
 
+6. Copy .env.example to .env, enter the personal API keys as needed.
+
 ## Git Cheat Sheet (Version Controll)
 Developers normally work on some local dev branch. Avoid directly work on main branch. Use "stash" to bring uncommitted changes across branches.
 
