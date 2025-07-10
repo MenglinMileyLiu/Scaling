@@ -3,6 +3,11 @@ ipykernel==6.29.5
 numpy==2.3.1
 pandas==2.3.0
 langchain==0.3.26
+langchain-core==0.3.68
+langchain-openai==0.3.27
+langchain-anthropic==0.3.17
 scikit-learn==1.7.0
 matplotlib==3.10.3
 seaborn==0.13.2
+langsmith==0.4.4
+dotenv==0.9.9
