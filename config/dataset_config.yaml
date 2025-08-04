@@ -1,0 +1,202 @@
+# Political Text Scaling Dataset Configuration
+# Configuration for Hugging Face dataset viewer and processing
+
+# Dataset viewer settings
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: "*.parquet"
+  - split: validation  
+    path: "validation/*.parquet"
+  - split: test
+    path: "test/*.parquet"
+
+# Viewer settings for Hugging Face
+viewer:
+  max_size_bytes: 500_000_000  # 500MB limit for text data
+  max_rows_per_split: 50_000   # 50K rows limit for viewer
+
+# Dataset metadata
+dataset_info:
+  name: "political-text-scaling"
+  description: "Political Text Scaling Dataset - Congressional speeches with pre-computed topic weights for ideology scaling research"
+  version: "1.0.0"
+  citation: "Political Text Scaling Dataset: Congressional Speeches with Topic Weights, 2024"
+  homepage: "https://huggingface.co/datasets/mliliu/political-text-scaling"
+  license: "other"
+  
+  # Core features schema
+  features:
+    # Document identifiers
+    doc.id:
+      dtype: string
+      description: "Unique document identifier"
+    
+    bonica.rid:
+      dtype: string
+      description: "Legislator (Bonica) identifier"
+    
+    bill.id:
+      dtype: string
+      description: "Associated bill identifier"
+    
+    page.id:
+      dtype: string
+      description: "Congressional record page reference"
+    
+    # Text content
+    text:
+      dtype: string
+      description: "Raw speech text"
+    
+    stemmed.text:
+      dtype: string
+      description: "Preprocessed stemmed version of the text"
+    
+    # Metadata
+    date:
+      dtype: string
+      description: "Date of speech (YYYY-MM-DD)"
+    
+    congno:
+      dtype: int64
+      description: "Congress number (e.g., 108 = 108th Congress)"
+    
+    legis.body:
+      dtype: string
+      description: "Legislative body (US Senate, US House)"
+    
+    training.set:
+      dtype: int64
+      description: "Binary indicator (1 = training, 0 = test)"
+    
+    doc.type:
+      dtype: string
+      description: "Document type (e.g., 'speech')"
+    
+    # Topic weights (25 dimensions)
+    tw.latent1:
+      dtype: float64
+      description: "Latent dimension 1"
+    
+    tw.abortion.and.social.conservatism:
+      dtype: float64
+      description: "Abortion and social issues topic weight"
+    
+    tw.agriculture:
+      dtype: float64
+      description: "Agricultural policy topic weight"
+    
+    tw.banking.and.finance:
+      dtype: float64
+      description: "Banking and financial regulation topic weight"
+    
+    tw.civil.rights:
+      dtype: float64
+      description: "Civil rights issues topic weight"
+    
+    tw.congress.and.procedural:
+      dtype: float64
+      description: "Congressional procedures topic weight"
+    
+    tw.crime:
+      dtype: float64
+      description: "Crime and law enforcement topic weight"
+    
+    tw.defense.and.foreign.policy:
+      dtype: float64
+      description: "Defense and foreign policy topic weight"
+    
+    tw.economy:
+      dtype: float64
+      description: "Economic policy topic weight"
+    
+    tw.education:
+      dtype: float64
+      description: "Education policy topic weight"
+    
+    tw.energy:
+      dtype: float64
+      description: "Energy policy topic weight"
+    
+    tw.environment:
+      dtype: float64
+      description: "Environmental issues topic weight"
+    
+    tw.fair.elections:
+      dtype: float64
+      description: "Election and voting rights topic weight"
+    
+    tw.federal.agencies.and.gov.regulation:
+      dtype: float64
+      description: "Federal agencies and regulation topic weight"
+    
+    tw.guns:
+      dtype: float64
+      description: "Gun policy topic weight"
+    
+    tw.healthcare:
+      dtype: float64
+      description: "Healthcare policy topic weight"
+    
+    tw.higher.education:
+      dtype: float64
+      description: "Higher education topic weight"
+    
+    tw.immigration:
+      dtype: float64
+      description: "Immigration policy topic weight"
+    
+    tw.indian.affairs:
+      dtype: float64
+      description: "Native American affairs topic weight"
+    
+    tw.intelligence.and.surveillance:
+      dtype: float64
+      description: "Intelligence and surveillance topic weight"
+    
+    tw.labor:
+      dtype: float64
+      description: "Labor policy topic weight"
+    
+    tw.law.courts.and.judges:
+      dtype: float64
+      description: "Legal system and judiciary topic weight"
+    
+    tw.transportation:
+      dtype: float64
+      description: "Transportation policy topic weight"
+    
+    tw.veterans.affairs:
+      dtype: float64
+      description: "Veterans affairs topic weight"
+    
+    tw.womens.issues:
+      dtype: float64
+      description: "Women's issues topic weight"
+
+# Processing configuration
+processing:
+  chunk_size: 50000
+  max_text_length: 10000
+  min_text_length: 10
+  
+  # Topic analysis settings
+  topic_threshold: 0.01  # Minimum weight to consider topic "active"
+  max_topics_per_doc: 5  # Maximum topics to highlight per document
+  
+  # Filtering options
+  available_filters:
+    - congress_range
+    - legislative_body
+    - training_split
+    - topic_focus
+    - date_range
+
+# Export formats
+export_formats:
+  - parquet
+  - csv_gz
+  - json_lines
+  - arrow
