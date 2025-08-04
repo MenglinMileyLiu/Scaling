@@ -16,29 +16,32 @@ viewer:
   
 # Dataset card settings  
 dataset_info:
-  description: "Database on Ideology, Money in Politics, and Elections (DIME) - Recipients with Campaign Finance ideology scores"
-  citation: "Bonica, Adam. 2014. Mapping the ideological marketplace. American Journal of Political Science 58(2): 367-386."
-  homepage: "https://data.stanford.edu/dime"
+  description: "Political Text Scaling Dataset - Congressional speeches with pre-computed topic weights for ideology scaling research"
+  citation: "Political Text Scaling Dataset: Congressional Speeches with Topic Weights, 2024"
+  homepage: "https://huggingface.co/datasets/mliliu/political-text-scaling"
   license: "other"
   features:
+    doc.id:
+      dtype: string
+      description: "Unique document identifier"
+    text:
+      dtype: string  
+      description: "Raw speech text"
+    stemmed.text:
+      dtype: string
+      description: "Preprocessed stemmed version of the text"
+    date:
+      dtype: string
+      description: "Date of speech (YYYY-MM-DD)"
+    congno:
+      dtype: int64
+      description: "Congress number (e.g., 108 = 108th Congress)"
+    legis.body:
+      dtype: string
+      description: "Legislative body (US Senate, US House)"
     bonica.rid:
       dtype: string
-      description: "Unique recipient identifier"
-    name:
-      dtype: string  
-      description: "Recipient name"
-    party:
-      dtype: string
-      description: "Party code (100=Dem, 200=Rep, etc.)"
-    state:
-      dtype: string
-      description: "State abbreviation"
-    cycle:
+      description: "Legislator (Bonica) identifier"
+    training.set:
       dtype: int64
-      description: "Election cycle year"
-    recipient.cfscore:
-      dtype: float64
-      description: "Campaign Finance ideology score (-2=liberal, +2=conservative)"
-    nimsp.office:
-      dtype: string
-      description: "Office sought (house, senate, etc.)"
+      description: "Binary indicator (1 = training, 0 = test)"

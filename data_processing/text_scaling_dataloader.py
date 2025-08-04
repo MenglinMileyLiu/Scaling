@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-DIME Dataset DataLoader with Batch and Streaming Support
+Political Text Scaling Dataset DataLoader with Batch and Streaming Support
 """
 
 import pandas as pd
@@ -19,17 +19,17 @@ except ImportError:
     TORCH_AVAILABLE = False
     print("PyTorch not available. Using pandas-only implementation.")
 
-class DIMEDataset:
-    """Dataset wrapper for DIME recipients data"""
+class TextScalingDataset:
+    """Dataset wrapper for political text scaling data"""
     
     def __init__(self, 
-                 source: str = "mliliu/dime-recipients",
+                 source: str = "mliliu/political-text-scaling",
                  filters: Optional[Dict] = None,
                  columns: Optional[List[str]] = None):
         """
         Args:
             source: HuggingFace dataset name or local file path
-            filters: Dict of column filters e.g. {'cycle': lambda x: x >= 2010}
+            filters: Dict of column filters e.g. {'congno': lambda x: x >= 110}
             columns: List of columns to keep (None = all columns)
         """
         self.source = source
@@ -72,8 +72,8 @@ class DIMEDataset:
         return self.df.iloc[indices]
 
 
-class DIMEStreamingDataset:
-    """Streaming dataset for large DIME data"""
+class TextScalingStreamingDataset:
+    """Streaming dataset for large text scaling data"""
     
     def __init__(self, 
                  shard_dir: str,
@@ -117,11 +117,11 @@ class DIMEStreamingDataset:
                 yield batch.to_dict('records')
 
 
-class DIMEDataLoader:
+class TextScalingDataLoader:
     """Main dataloader class with multiple loading strategies"""
     
     def __init__(self, 
-                 source: Union[str, DIMEDataset],
+                 source: Union[str, TextScalingDataset],
                  batch_size: int = 32,
                  shuffle: bool = True,
                  streaming: bool = False,
@@ -139,10 +139,10 @@ class DIMEDataLoader:
         self.streaming = streaming
         self.num_workers = num_workers
         
-        if isinstance(source, DIMEDataset):
+        if isinstance(source, TextScalingDataset):
             self.dataset = source
         else:
-            self.dataset = DIMEDataset(source)
+            self.dataset = TextScalingDataset(source)
     
     def get_pytorch_dataloader(self):
         """Get PyTorch DataLoader (if available)"""
@@ -165,7 +165,7 @@ class DIMEDataLoader:
             values = [item[key] for item in batch]
             
             # Convert numeric fields to tensors (if torch available)
-            if TORCH_AVAILABLE and key in ['cycle', 'recipient.cfscore', 'total.receipts', 'total.indiv.contribs']:
+            if TORCH_AVAILABLE and (key.startswith('tw.') or key in ['congno', 'training.set']):
                 try:
                     collated[key] = torch.tensor(values, dtype=torch.float32)
                 except:
@@ -202,8 +202,8 @@ def example_batch_loading():
     print("-" * 50)
     
     # Create dataloader with filters
-    loader = DIMEDataLoader(
-        source="mliliu/dime-recipients",
+    loader = TextScalingDataLoader(
+        source="mliliu/political-text-scaling",
         batch_size=64,
         shuffle=True
     )
@@ -226,20 +226,20 @@ def example_filtered_loading():
     print("-" * 50)
     
     # Create dataset with filters
-    dataset = DIMEDataset(
-        source="mliliu/dime-recipients",
+    dataset = TextScalingDataset(
+        source="mliliu/political-text-scaling",
         filters={
-            'cycle': lambda x: x >= 2016,
-            'recipient.type': lambda x: str(x) == 'cand'
+            'congno': lambda x: x >= 110,
+            'legis.body': lambda x: str(x) == 'US House'
         },
-        columns=['name', 'party', 'state', 'cycle', 'recipient.cfscore', 'nimsp.office']
+        columns=['doc.id', 'text', 'date', 'congno', 'legis.body', 'tw.healthcare', 'tw.economy']
     )
     
     print(f"Filtered dataset size: {len(dataset)}")
     print(f"Columns: {dataset.df.columns.tolist()}")
     
     # Create loader
-    loader = DIMEDataLoader(dataset, batch_size=32)
+    loader = TextScalingDataLoader(dataset, batch_size=32)
     
     # Get sample
     sample = loader.get_sample(3)
@@ -253,10 +253,10 @@ def example_streaming():
     print("-" * 50)
     
     # Note: This requires sharded data created by the processing pipeline
-    shard_dir = "dime_optimized/shards"
+    shard_dir = "text_scaling_optimized/shards"
     
     if os.path.exists(shard_dir):
-        streaming_dataset = DIMEStreamingDataset(
+        streaming_dataset = TextScalingStreamingDataset(
             shard_dir=shard_dir,
             batch_size=128,
             shuffle=True
