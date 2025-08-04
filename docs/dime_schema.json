@@ -1,0 +1,833 @@
+{
+  "dataset_name": "DIME Recipients Database",
+  "total_rows": 479502,
+  "total_columns": 64,
+  "time_range": "1980-2024",
+  "columns": {
+    "election": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "860 (too many to list)",
+      "sample_values": [
+        "fd1980",
+        "fd1982",
+        "fd1984",
+        "fd1986",
+        "fd1988"
+      ]
+    },
+    "cycle": {
+      "dtype": "int64",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 23,
+      "sample_values": [
+        1980,
+        1982,
+        1984,
+        1986,
+        1988
+      ]
+    },
+    "fecyear": {
+      "dtype": "float64",
+      "null_count": "7",
+      "null_percentage": "0.00%",
+      "unique_values": 66,
+      "sample_values": [
+        1980.0,
+        1982.0,
+        1984.0,
+        1986.0,
+        1988.0
+      ]
+    },
+    "bonica.rid": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "216371 (too many to list)",
+      "sample_values": [
+        "cand2",
+        "cand2",
+        "cand2",
+        "cand2",
+        "cand2"
+      ]
+    },
+    "bonica.cid": {
+      "dtype": "float64",
+      "null_count": "190043",
+      "null_percentage": "39.63%",
+      "unique_values": "116738 (too many to list)",
+      "sample_values": [
+        2262642502.0,
+        2262642502.0,
+        2262642502.0,
+        2262642502.0,
+        2262642502.0
+      ]
+    },
+    "name": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "228814 (too many to list)",
+      "sample_values": [
+        "whitten, jamie lloyd",
+        "whitten, jamie lloyd",
+        "whitten, jamie lloyd",
+        "whitten, jamie lloyd",
+        "whitten, jamie lloyd"
+      ]
+    },
+    "lname": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "62847 (too many to list)",
+      "sample_values": [
+        "whitten",
+        "whitten",
+        "whitten",
+        "whitten",
+        "whitten"
+      ]
+    },
+    "ffname": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "48436 (too many to list)",
+      "sample_values": [
+        "jamie lloyd",
+        "jamie lloyd",
+        "jamie lloyd",
+        "jamie lloyd",
+        "jamie lloyd"
+      ]
+    },
+    "fname": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "14334 (too many to list)",
+      "sample_values": [
+        "jamie",
+        "jamie",
+        "jamie",
+        "jamie",
+        "jamie"
+      ]
+    },
+    "mname": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "8855 (too many to list)",
+      "sample_values": [
+        "lloyd",
+        "lloyd",
+        "lloyd",
+        "lloyd",
+        "lloyd"
+      ]
+    },
+    "title": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 54,
+      "sample_values": [
+        "",
+        " dr dc",
+        " rev",
+        " maj",
+        " dr"
+      ]
+    },
+    "suffix": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 22,
+      "sample_values": [
+        "",
+        "jr",
+        "iii",
+        "sr",
+        "iv"
+      ]
+    },
+    "party": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 34,
+      "sample_values": [
+        "100",
+        "200",
+        "328",
+        " ",
+        "3"
+      ]
+    },
+    "state": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 59,
+      "sample_values": [
+        "MS",
+        "NJ",
+        "TX",
+        "IL",
+        "WI"
+      ]
+    },
+    "seat": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 66,
+      "sample_values": [
+        "federal:senate",
+        "federal:house",
+        "federal:president",
+        "federal:committee",
+        "federal:527"
+      ]
+    },
+    "district": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "7907 (too many to list)",
+      "sample_values": [
+        "MSS80",
+        "MSS82",
+        "MSS84",
+        "MSS86",
+        "MSS88"
+      ]
+    },
+    "distcyc": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "11380 (too many to list)",
+      "sample_values": [
+        "1980_MS_S",
+        "1982_MS_S",
+        "1984_MS_S",
+        "1986_MS_S",
+        "1988_MS_S"
+      ]
+    },
+    "ico.status": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 5,
+      "sample_values": [
+        "I",
+        "C",
+        "O",
+        "",
+        "U"
+      ]
+    },
+    "cand.gender": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 4,
+      "sample_values": [
+        "M",
+        "",
+        "F",
+        "U"
+      ]
+    },
+    "recipient.cfscore": {
+      "dtype": "float64",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "6558 (too many to list)",
+      "sample_values": [
+        -0.263,
+        -0.263,
+        -0.263,
+        -0.263,
+        -0.263
+      ]
+    },
+    "recipient.cfscore.dyn": {
+      "dtype": "float64",
+      "null_count": "20329",
+      "null_percentage": "4.24%",
+      "unique_values": "7028 (too many to list)",
+      "sample_values": [
+        -0.017,
+        -0.075,
+        -0.395,
+        -0.364,
+        -0.602
+      ]
+    },
+    "contributor.cfscore": {
+      "dtype": "float64",
+      "null_count": "204009",
+      "null_percentage": "42.55%",
+      "unique_values": "5755 (too many to list)",
+      "sample_values": [
+        -0.8,
+        -0.8,
+        -0.8,
+        -0.8,
+        -0.8
+      ]
+    },
+    "dwdime": {
+      "dtype": "float64",
+      "null_count": "304012",
+      "null_percentage": "63.40%",
+      "unique_values": "3244 (too many to list)",
+      "sample_values": [
+        -0.555,
+        -0.555,
+        -0.555,
+        -0.555,
+        -0.555
+      ]
+    },
+    "dwnom1": {
+      "dtype": "float64",
+      "null_count": "460708",
+      "null_percentage": "96.08%",
+      "unique_values": "1044 (too many to list)",
+      "sample_values": [
+        -0.161,
+        -0.161,
+        -0.161,
+        -0.161,
+        -0.161
+      ]
+    },
+    "dwnom2": {
+      "dtype": "float64",
+      "null_count": "460523",
+      "null_percentage": "96.04%",
+      "unique_values": "1123 (too many to list)",
+      "sample_values": [
+        0.987,
+        0.987,
+        0.987,
+        0.987,
+        0.987
+      ]
+    },
+    "ps.dwnom1": {
+      "dtype": "float64",
+      "null_count": "468977",
+      "null_percentage": "97.81%",
+      "unique_values": "1513 (too many to list)",
+      "sample_values": [
+        -0.15,
+        -0.223,
+        -0.286,
+        -0.28,
+        -0.359
+      ]
+    },
+    "ps.dwnom2": {
+      "dtype": "float64",
+      "null_count": "468977",
+      "null_percentage": "97.81%",
+      "unique_values": "1814 (too many to list)",
+      "sample_values": [
+        0.754,
+        0.61,
+        0.619,
+        0.704,
+        0.803
+      ]
+    },
+    "irt.cfscore": {
+      "dtype": "float64",
+      "null_count": "464577",
+      "null_percentage": "96.89%",
+      "unique_values": "1850 (too many to list)",
+      "sample_values": [
+        0.111,
+        0.111,
+        0.111,
+        0.111,
+        0.111
+      ]
+    },
+    "composite.score": {
+      "dtype": "float64",
+      "null_count": "120095",
+      "null_percentage": "25.05%",
+      "unique_values": "173119 (too many to list)",
+      "sample_values": [
+        -1.35493548273753,
+        -1.35493548273753,
+        -1.35493548273753,
+        -1.35493548273753,
+        -1.35493548273753
+      ]
+    },
+    "num.givers": {
+      "dtype": "int64",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "6783 (too many to list)",
+      "sample_values": [
+        230,
+        180,
+        179,
+        201,
+        171
+      ]
+    },
+    "num.givers.total": {
+      "dtype": "int64",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "6340 (too many to list)",
+      "sample_values": [
+        501,
+        501,
+        501,
+        501,
+        501
+      ]
+    },
+    "total.receipts": {
+      "dtype": "float64",
+      "null_count": "266101",
+      "null_percentage": "55.50%",
+      "unique_values": "115205 (too many to list)",
+      "sample_values": [
+        183733.0,
+        151754.0,
+        139226.0,
+        253863.0,
+        175925.0
+      ]
+    },
+    "total.disbursements": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "56897 (too many to list)",
+      "sample_values": [
+        131265.0,
+        163819.0,
+        45370.0,
+        170878.0,
+        58370.0
+      ]
+    },
+    "total.indiv.contribs": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "71704 (too many to list)",
+      "sample_values": [
+        63080.0,
+        38465.0,
+        7909.0,
+        37129.0,
+        7300.0
+      ]
+    },
+    "total.unitemized": {
+      "dtype": "float64",
+      "null_count": "246857",
+      "null_percentage": "51.48%",
+      "unique_values": "50857 (too many to list)",
+      "sample_values": [
+        45880.0,
+        35715.0,
+        2909.0,
+        26529.0,
+        2300.0
+      ]
+    },
+    "total.pac.contribs": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "54009 (too many to list)",
+      "sample_values": [
+        120403.0,
+        113289.0,
+        115050.0,
+        187290.0,
+        137820.0
+      ]
+    },
+    "total.party.contribs": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "19105 (too many to list)",
+      "sample_values": [
+        250.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "total.contribs.from.candidate": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "21592 (too many to list)",
+      "sample_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        500.0
+      ]
+    },
+    "ind.exp.support": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "6486 (too many to list)",
+      "sample_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "ind.exp.oppose": {
+      "dtype": "float64",
+      "null_count": "272837",
+      "null_percentage": "56.90%",
+      "unique_values": "1838 (too many to list)",
+      "sample_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "prim.vote.pct": {
+      "dtype": "float64",
+      "null_count": "453248",
+      "null_percentage": "94.52%",
+      "unique_values": "10936 (too many to list)",
+      "sample_values": [
+        1.0,
+        0.8424214,
+        0.8824604,
+        0.7714185,
+        0.85423
+      ]
+    },
+    "pwinner": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 4,
+      "sample_values": [
+        "W",
+        "",
+        "L",
+        " "
+      ]
+    },
+    "gen.vote.pct": {
+      "dtype": "float64",
+      "null_count": "446651",
+      "null_percentage": "93.15%",
+      "unique_values": "6955 (too many to list)",
+      "sample_values": [
+        63.0,
+        71.0,
+        88.0,
+        66.0,
+        78.0
+      ]
+    },
+    "gwinner": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 3,
+      "sample_values": [
+        "W",
+        "",
+        "L"
+      ]
+    },
+    "s.elec.stat": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 7,
+      "sample_values": [
+        " ",
+        "",
+        "?",
+        "L",
+        "W"
+      ]
+    },
+    "r.elec.stat": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 5,
+      "sample_values": [
+        " ",
+        "",
+        "?",
+        "L",
+        "W"
+      ]
+    },
+    "district.pres.vs": {
+      "dtype": "float64",
+      "null_count": "436187",
+      "null_percentage": "90.97%",
+      "unique_values": "690 (too many to list)",
+      "sample_values": [
+        0.493,
+        0.493,
+        0.378,
+        0.378,
+        0.395
+      ]
+    },
+    "fec.cand.status": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 5,
+      "sample_values": [
+        "C",
+        "P",
+        "F",
+        "N",
+        ""
+      ]
+    },
+    "recipient.type": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 2,
+      "sample_values": [
+        "cand",
+        "comm"
+      ]
+    },
+    "igcat": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 8,
+      "sample_values": [
+        "",
+        "M",
+        "C",
+        "T",
+        "W"
+      ]
+    },
+    "comtype": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 17,
+      "sample_values": [
+        "H",
+        "S",
+        "P",
+        "",
+        "V"
+      ]
+    },
+    "ICPSR": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "479502 (too many to list)",
+      "sample_values": [
+        "100751980",
+        "100751982",
+        "100751984",
+        "100751986",
+        "100751988"
+      ]
+    },
+    "ICPSR2": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "217214 (too many to list)",
+      "sample_values": [
+        "10075",
+        "10075",
+        "10075",
+        "10075",
+        "10075"
+      ]
+    },
+    "Cand.ID": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "254747 (too many to list)",
+      "sample_values": [
+        "H6MS01024",
+        "H6MS01024",
+        "H6MS01024",
+        "H6MS01024",
+        "H6MS01024"
+      ]
+    },
+    "FEC.ID": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "148018 (too many to list)",
+      "sample_values": [
+        "C00094912",
+        "C00094912",
+        "C00094912",
+        "C00094912",
+        "C00094912"
+      ]
+    },
+    "NID": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "58207 (too many to list)",
+      "sample_values": [
+        "N00003287",
+        "N00003287",
+        "N00003287",
+        "N00003287",
+        "N00003287"
+      ]
+    },
+    "before.switch.ICPSR": {
+      "dtype": "float64",
+      "null_count": "479375",
+      "null_percentage": "99.97%",
+      "unique_values": 13,
+      "sample_values": [
+        14428.0,
+        14454.0,
+        14602.0,
+        14659.0,
+        14679.0
+      ]
+    },
+    "after.switch.ICPSR": {
+      "dtype": "float64",
+      "null_count": "479355",
+      "null_percentage": "99.97%",
+      "unique_values": 16,
+      "sample_values": [
+        94428.0,
+        94454.0,
+        94602.0,
+        94659.0,
+        100.0
+      ]
+    },
+    "party.orig": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 86,
+      "sample_values": [
+        "100.0",
+        "200.0",
+        "1.0",
+        "",
+        "328.0"
+      ]
+    },
+    "nimsp.party": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 80,
+      "sample_values": [
+        "",
+        "DEMOCRATIC",
+        "REPUBLICAN",
+        "THIRD-PARTY",
+        "NONPARTISAN"
+      ]
+    },
+    "nimsp.candidate.ICO.code": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 7,
+      "sample_values": [
+        "",
+        "I",
+        "C",
+        "O",
+        "IO"
+      ]
+    },
+    "nimsp.district": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "1874 (too many to list)",
+      "sample_values": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "nimsp.office": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": "665 (too many to list)",
+      "sample_values": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "nimsp.candidate.status": {
+      "dtype": "object",
+      "null_count": "0",
+      "null_percentage": "0.00%",
+      "unique_values": 34,
+      "sample_values": [
+        "",
+        "Lost-General",
+        "Won-General",
+        "Lost - Primary Election",
+        "Won"
+      ]
+    }
+  }
+}
